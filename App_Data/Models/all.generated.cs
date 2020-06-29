@@ -6,8 +6,8 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "282f4727391812b0")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "15512439967b40d3")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
 
 
 // FILE: models.generated.cs
@@ -62,7 +62,7 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
-		/// Adres Mailowy: Adres MAilowy
+		/// Adres Mailowy: Adres Mailowy
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
 		[ImplementPropertyType("adresMailowy")]
@@ -76,7 +76,7 @@ namespace Umbraco.Web.PublishedModels
 		public string H1Title => this.Value<string>("h1Title");
 
 		///<summary>
-		/// Logo: Image Loga
+		/// Logo: Obrazek Loga
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
 		[ImplementPropertyType("logo")]
@@ -104,25 +104,51 @@ namespace Umbraco.Web.PublishedModels
 		public string TelefonRecepcja => this.Value<string>("telefonRecepcja");
 
 		///<summary>
-		/// TextCenter p-class: Text-Center Under Title
+		/// TextCenter p-class: Opis w tekst center
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
 		[ImplementPropertyType("textCenterPClass")]
 		public string TextCenterPclass => this.Value<string>("textCenterPClass");
 
 		///<summary>
-		/// URLBackground
+		/// URLBackground: Zdjęcie tła wybrać plik
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
 		[ImplementPropertyType("uRLBackground")]
 		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent URlbackground => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("uRLBackground");
+	}
+
+	/// <summary>Galeria</summary>
+	[PublishedModel("galeria")]
+	public partial class Galeria : PublishedContentModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
+		public new const string ModelTypeAlias = "galeria";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Galeria, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public Galeria(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
 
 		///<summary>
-		/// Zdjęcie tła
+		/// Galeria Zdjęć: Tutaj są pliki galerii zdjęć
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
-		[ImplementPropertyType("zdjecieTla")]
-		public string ZdjecieTla => this.Value<string>("zdjecieTla");
+		[ImplementPropertyType("galeriaZdjec")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> GaleriaZdjec => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>>("galeriaZdjec");
 	}
 
 	/// <summary>Folder</summary>

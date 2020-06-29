@@ -3,4 +3,3 @@ angular.module("umbraco")
         function () {
             alert("The controller has landed");
         });
-And in the.html file w
