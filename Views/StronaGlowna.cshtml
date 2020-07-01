@@ -1,9 +1,9 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.StronaGlowna>
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
-	Layout = null;
+	Layout = "master.cshtml";
 	
-	var background = Model.Value<IPublishedContent>("uRLBackground");
+	var background = Model.Value<IPublishedContent>("zdjecieTla");
 	if (background != null)
     {
          @background.Url
@@ -16,34 +16,6 @@
     }
 }
 
-<!doctype html>
-<html lang="pl">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Profesjonalne usługi kosmetologii i podologii.">
-
-    <!-- Icons -->
-    <script src="https://kit.fontawesome.com/f4a29b2754.js" crossorigin="anonymous"></script>
-
-    <!-- Favicon-->
-    <link rel="icon" href="../../img/favicon.webp">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="../css/style.css">
-
-    <!-- Custom fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
-
-    <!-- Animations -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
-
-    <title>@Model.Value("pageTitle")</title>
     
     <style>
   body{
@@ -60,7 +32,7 @@
   <body>
       <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(186, 113, 204, 0.8) 61%);">
         <a class="navbar-brand animate__animated animate__fadeInDown" href="#">
-          <img src="@logo.Url" width="150" height="50" alt="">
+          <img src="@logo.Url" width="150" height="50" alt="Emi-Center Logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -107,8 +79,8 @@
 
           <div class="col-lg-4 position-relative"></div>
           <div class="col-lg-4 position-relative bg-black animate__animated animate__bounceInLeft animate__delay-1s">
-            <h1 class="text-center" style="font-size: calc(2.5rem + 1vw);">@Model.Value("h1Title")</h1>
-            <p class="text-center" style="font-size: calc(0.9rem + 1vw);">@Model.Value("textCenterPClass")</p>
+            <h1 class="text-center" style="font-size: calc(2.5rem + 1vw);">@Model.Value("tytulH1")</h1>
+            <p class="text-center" style="font-size: calc(0.9rem + 1vw);">@Model.Value("tytulCenter")</p>
           </div>
           <div class="col-lg-4 position-relative"></div>
         </div>
@@ -121,69 +93,3 @@
     <section class="showcase position-relative top-margin center-main">
       
     </section>
-  <!-- Footer -->
-  <footer class="position-relative footer-bottom col-lg-12 bg-black">
-    <!-- Footer Elements -->
-    <div class="row no-gutters position-relative" id='contact'>
-
-      <div class="col-lg-8 position-relative order-2 order-sm-2 order-lg-1">
-        <div class="row no-gutters position-relative footer-margin-top">
-          <div class="col-lg-6 position-relative">
-
-          </div>
-      
-          <div class="col-lg-6 position-relative">
-            <div class="container">
-              <!-- Social buttons -->
-              <ul class="list-unstyled list-inline text-center">
-                <li class="list-inline-item">
-                  <a href="https://www.facebook.com/EmiCenterPodologiaKosmetyka/" class="btn-floating btn-fb mx-1" target="_blank">
-                    <i class="fab fa-facebook footer-icons"> </i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="https://www.moment.pl/emi-center-centrum-podologii-i-kosmetyki" class="btn-floating btn-li mx-1" target="_blank">
-                    <i class="far fa-check-circle footer-icons"></i>
-                  </a>
-                </li>
-              </ul>
-              <!-- Social buttons -->
-            </div>
-          </div>
-        </div>
-
-        <div class="row no-gutters position-relative">
-          <div class="col-lg-6 position-relative">
-            <p class="text-center" style="font-size: calc(0.7rem + 1vw);color:rgb(186, 113, 204);">10-461 Olsztyn<strong> Żołnierska 14 b</strong></p>          
-          </div>
-      
-          <div class="col-lg-6 position-relative">
-            <div class="footer-copyright text-center py-3" style="color:rgb(186, 113, 204);font-family: 'Josefin Sans', sans-serif;">© 2020 Copyright:
-              <a href="https://emi-center.pl/">Emi-Center.pl</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    <div class="col-lg-4 position-relative order-1 order-sm-1 order-lg-2" style="font-family: 'Josefin Sans', sans-serif;">
-        <p class="text-center" style="font-size: calc(1rem + 1vw);color:rgb(186, 113, 204);">Recepcja: <strong><a href="tel:@Model.Value("telefonRecepcja")">@Model.Value("telefonRecepcja")</a></strong></p>
-        <p class="text-center" style="font-size: calc(1rem + 1vw);color:rgb(186, 113, 204);">Firmowy: <strong><a href="tel:@Model.Value("telefonFirmowy")">@Model.Value("telefonFirmowy")</a></strong></p>
-        <p class="text-center" style="font-size: calc(1rem + 1vw);color:rgb(186, 113, 204);">E-mail: <strong><a href="mailto:@Model.Value("adresMailowy")">@Model.Value("adresMailowy")</a></strong></p>
-      </div>
-
-    </div>
-
-    
-    <!-- Footer Elements -->
-
-    <!-- Copyright -->
-
-    <!-- Copyright -->
-  </footer>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script src="../scripts/custom-js.js"></script>
-  </body>
-</html>

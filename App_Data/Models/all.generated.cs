@@ -6,8 +6,8 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "15512439967b40d3")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "7a4272fddae18662")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.5")]
 
 
 // FILE: models.generated.cs
@@ -36,9 +36,70 @@ using  Umbraco.ModelsBuilder.Embedded;
 
 namespace Umbraco.Web.PublishedModels
 {
+	/// <summary>Master</summary>
+	[PublishedModel("master")]
+	public partial class Master : PublishedContentModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
+		public new const string ModelTypeAlias = "master";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Master, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public Master(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Adres Mailowy
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
+		[ImplementPropertyType("adresMailowy")]
+		public string AdresMailowy => this.Value<string>("adresMailowy");
+
+		///<summary>
+		/// Logo
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
+		[ImplementPropertyType("logo")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent Logo => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("logo");
+
+		///<summary>
+		/// Telefon Firmowy
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
+		[ImplementPropertyType("telefonFirmowy")]
+		public string TelefonFirmowy => this.Value<string>("telefonFirmowy");
+
+		///<summary>
+		/// Telefon Recepcja
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
+		[ImplementPropertyType("telefonRecepcja")]
+		public string TelefonRecepcja => this.Value<string>("telefonRecepcja");
+
+		///<summary>
+		/// Tytuł Strony
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
+		[ImplementPropertyType("tytulStrony")]
+		public string TytulStrony => this.Value<string>("tytulStrony");
+	}
+
 	/// <summary>Strona Główna</summary>
 	[PublishedModel("stronaGlowna")]
-	public partial class StronaGlowna : PublishedContentModel
+	public partial class StronaGlowna : Master
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -62,65 +123,30 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
-		/// Adres Mailowy: Adres Mailowy
+		/// Tytuł Center
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
-		[ImplementPropertyType("adresMailowy")]
-		public string AdresMailowy => this.Value<string>("adresMailowy");
+		[ImplementPropertyType("tytulCenter")]
+		public string TytulCenter => this.Value<string>("tytulCenter");
 
 		///<summary>
-		/// H1 Title: Title insert in H1 (emi-Center etc.)
+		/// Tytuł H1
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
-		[ImplementPropertyType("h1Title")]
-		public string H1Title => this.Value<string>("h1Title");
+		[ImplementPropertyType("tytulH1")]
+		public string TytulH1 => this.Value<string>("tytulH1");
 
 		///<summary>
-		/// Logo: Obrazek Loga
+		/// Zdjęcie Tła
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
-		[ImplementPropertyType("logo")]
-		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent Logo => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("logo");
-
-		///<summary>
-		/// Page Title: Page Title for example (Emi-Center.pl etc.)
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
-		[ImplementPropertyType("pageTitle")]
-		public string PageTitle => this.Value<string>("pageTitle");
-
-		///<summary>
-		/// Telefon Firmowy: +48 000 555 000
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
-		[ImplementPropertyType("telefonFirmowy")]
-		public string TelefonFirmowy => this.Value<string>("telefonFirmowy");
-
-		///<summary>
-		/// Telefon Recepcja
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
-		[ImplementPropertyType("telefonRecepcja")]
-		public string TelefonRecepcja => this.Value<string>("telefonRecepcja");
-
-		///<summary>
-		/// TextCenter p-class: Opis w tekst center
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
-		[ImplementPropertyType("textCenterPClass")]
-		public string TextCenterPclass => this.Value<string>("textCenterPClass");
-
-		///<summary>
-		/// URLBackground: Zdjęcie tła wybrać plik
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
-		[ImplementPropertyType("uRLBackground")]
-		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent URlbackground => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("uRLBackground");
+		[ImplementPropertyType("zdjecieTla")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent ZdjecieTla => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("zdjecieTla");
 	}
 
 	/// <summary>Galeria</summary>
 	[PublishedModel("galeria")]
-	public partial class Galeria : PublishedContentModel
+	public partial class Galeria : Master
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -144,11 +170,91 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
-		/// Galeria Zdjęć: Tutaj są pliki galerii zdjęć
+		/// Zdjęcia Galerii
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
-		[ImplementPropertyType("galeriaZdjec")]
-		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> GaleriaZdjec => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>>("galeriaZdjec");
+		[ImplementPropertyType("zdjeciaGalerii")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> ZdjeciaGalerii => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>>("zdjeciaGalerii");
+	}
+
+	/// <summary>CennikDocument</summary>
+	[PublishedModel("cennikDocument")]
+	public partial class CennikDocument : PublishedElementModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
+		public new const string ModelTypeAlias = "cennikDocument";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<CennikDocument, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public CennikDocument(IPublishedElement content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Cena Usługi
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
+		[ImplementPropertyType("cenaUslugi")]
+		public decimal CenaUslugi => this.Value<decimal>("cenaUslugi");
+
+		///<summary>
+		/// Czas Wykonania usługi
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
+		[ImplementPropertyType("czasWykonaniaUslugi")]
+		public decimal CzasWykonaniaUslugi => this.Value<decimal>("czasWykonaniaUslugi");
+
+		///<summary>
+		/// Nazwa Usługi
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
+		[ImplementPropertyType("nazwaUslugi")]
+		public string NazwaUslugi => this.Value<string>("nazwaUslugi");
+	}
+
+	/// <summary>Cennik</summary>
+	[PublishedModel("cennik")]
+	public partial class Cennik : Master
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
+		public new const string ModelTypeAlias = "cennik";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Cennik, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public Cennik(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Lista Usług
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
+		[ImplementPropertyType("listaUslug")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.CennikDocument> ListaUslug => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.CennikDocument>>("listaUslug");
 	}
 
 	/// <summary>Folder</summary>
