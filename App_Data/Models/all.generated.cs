@@ -6,8 +6,8 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "48068d61b0d6f1c5")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "3cac52a0f783bcda")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
 // FILE: models.generated.cs
@@ -95,6 +95,13 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
 		[ImplementPropertyType("tytulStrony")]
 		public string TytulStrony => this.Value<string>("tytulStrony");
+
+		///<summary>
+		/// Zdjęcie tła
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
+		[ImplementPropertyType("zdjecieTla")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent ZdjecieTla => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("zdjecieTla");
 	}
 
 	/// <summary>Strona Główna</summary>
@@ -135,13 +142,6 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
 		[ImplementPropertyType("tytulH1")]
 		public string TytulH1 => this.Value<string>("tytulH1");
-
-		///<summary>
-		/// Zdjęcie Tła
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
-		[ImplementPropertyType("zdjecieTla")]
-		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent ZdjecieTla => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("zdjecieTla");
 	}
 
 	/// <summary>Galeria</summary>
@@ -214,7 +214,7 @@ namespace Umbraco.Web.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
 		[ImplementPropertyType("czasWykonaniaUslugi")]
-		public decimal CzasWykonaniaUslugi => this.Value<decimal>("czasWykonaniaUslugi");
+		public string CzasWykonaniaUslugi => this.Value<string>("czasWykonaniaUslugi");
 
 		///<summary>
 		/// Nazwa Usługi
@@ -228,7 +228,7 @@ namespace Umbraco.Web.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.3")]
 		[ImplementPropertyType("opisUslugi")]
-		public string OpisUslugi => this.Value<string>("opisUslugi");
+		public global::System.Web.IHtmlString OpisUslugi => this.Value<global::System.Web.IHtmlString>("opisUslugi");
 	}
 
 	/// <summary>Cennik</summary>
