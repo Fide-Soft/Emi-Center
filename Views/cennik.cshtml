@@ -1,6 +1,104 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
 	Layout = "master.cshtml";
+	
+	
 }
 
  </head>
+ 
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(186, 113, 204, 0.8) 61%);">
+            <a class="navbar-brand animate__animated animate__fadeInDown" href="#">
+                <img src="../../img/logo.webp" width="150" height="50" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText" style="font-family: 'Josefin Sans', sans-serif;">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item animate__animated animate__fadeInDown">
+                        <a class="nav-link" href="../../pl/strona-glowna/index.html">Strona główna <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li data-toggle="collapse" data-target="#cennik" aria-expanded="false" aria-controls="cennik" class="active nav-item dropdown animate__animated animate__fadeInDown">
+                        <a class="nav-link" href="#cennik">Cennik</a>
+                    </li>
+                    <div id="cennik" class="collapse">
+                        <li class="nav-item animate__animated animate__fadeInDown">
+                            <a class="nav-link" href="../../pl/cennik/cennik-1.html">Pielęgnacja dłoni i paznokci</a>
+                        </li>
+                        <li class="nav-item animate__animated animate__fadeInDown">
+                            <a class="nav-link active" href="../../pl/cennik/cennik-2.html">Podologia</a>
+                        </li>
+                        <li class="nav-item animate__animated animate__fadeInDown">
+                            <a class="nav-link" href="../../pl/cennik/cennik-3.html">Masaż i pielęgnacja ciała</a>
+                        </li>
+                        <li class="nav-item animate__animated animate__fadeInDown">
+                            <a class="nav-link" href="../../pl/cennik/cennik-4.html">Kosmetyka</a>
+                        </li>
+                        <li class="nav-item animate__animated animate__fadeInDown">
+                            <a class="nav-link" href="../../pl/cennik/cennik-5.html">Chirurgia</a>
+                        </li>
+                    </div>
+                    <li class="nav-item  animate__animated animate__fadeInDown">
+                        <a class="nav-link" href="../../pl/galeria/galeria.html">Galeria</a>
+                    </li>
+                    <li class="nav-item  animate__animated animate__fadeInDown">
+                        <a class="nav-link" href="#contact">Kontakt</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+           <!-- Main section -->
+  <section class="showcase position-relative top-margin animate__animated animate__bounceInLeft animate__delay-1s">
+    <div class="container-fluid p-0 text-center price-list">
+        @{
+        IEnumerable<IPublishedElement> items = Model.Value<IEnumerable<IPublishedElement>>("listaUslug");
+        int i = 0; 
+        foreach(var item in items) {
+        
+        var nazwa = item.Value<string>("nazwaUslugi");
+        var czas = item.Value<int>("czasWykonaniaUslugi");
+        var cena = item.Value<decimal>("cenaUslugi");
+        var opis = item.Value<string>("opisUslugi");
+        
+        <div class="row no-gutters position-relative section" id='section-@i'>
+        
+            <div class="col-lg-1 position-relative"></div>
+            
+            <div class="col-lg-4 position-relative bg-black">
+                @nazwa<br> 
+                <a class="btn btn-primary" data-toggle="collapse" href="#info-opt-@i" role="button" aria-expanded="false" aria-controls="info-opt-@i">
+                    Więcej...
+                </a>
+            </div>
+            
+            <div class="col-lg-2 position-relative bg-black">
+                <p>@czas minut</p> 
+            </div>
+            
+            <div class="col-lg-1 position-relative"></div>
+
+            <div class="col-lg-3 position-relative bg-black">
+                <p>@cena zł</p> 
+            </div>
+
+            <div class="col-lg-1 position-relative"></div>
+        </div>
+        
+        <div class="col-lg-12 bg-black">
+            <div class="collapse" id="info-opt-@i">
+                <div class="card card-body" style="background-color: transparent !important;border-color: white !important;">
+                    @opis 
+                </div>
+            </div>
+        </div>
+        
+        i++;    
+        }
+        }
+        
+         </div>
+  </section>
