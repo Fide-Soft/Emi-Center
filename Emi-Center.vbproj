@@ -36,16 +36,6 @@
     <DocumentationFile>Emi-Center.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>pdbonly</DebugType>
-    <DefineDebug>false</DefineDebug>
-    <DefineTrace>true</DefineTrace>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\</OutputPath>
-    <DocumentationFile>Emi-Center.xml</DocumentationFile>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="ClientDependency.Core, Version=1.9.9.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\ClientDependency.1.9.9\lib\net45\ClientDependency.Core.dll</HintPath>
@@ -293,6 +283,10 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Plugins\Umbraco.TimePicker\timepicker.controller.js" />
+    <Content Include="App_Plugins\Umbraco.TimePicker\timepicker.html" />
+    <Content Include="App_Plugins\URLPicker\urlpicker.controller.js" />
+    <Content Include="App_Plugins\URLPicker\urlpicker.html" />
     <Content Include="config\grid.editors.config.js" />
     <Content Include="config\Lang\cs-CZ.user.xml" />
     <Content Include="config\Lang\da-DK.user.xml" />
@@ -313,7 +307,24 @@
     <Content Include="config\Lang\sv-SE.user.xml" />
     <Content Include="config\Lang\zh-CN.user.xml" />
     <Content Include="config\logviewer.searches.config.js" />
+    <Content Include="config\splashes\noNodes.aspx" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\cookiealert.css" />
+    <Content Include="css\style.css" />
     <Content Include="Global.asax" />
+    <Content Include="Media\2wsbxl3i\img-2.jpg" />
+    <Content Include="Media\334ndtxc\img-6.jpg" />
+    <Content Include="Media\csklaqo3\img-8.jpg" />
+    <Content Include="Media\duuofc5c\img-3.jpg" />
+    <Content Include="Media\eroluq4b\img-5.jpg" />
+    <Content Include="Media\eyinwqvc\img-10.jpg" />
+    <Content Include="Media\hd0jywmy\img-4.jpg" />
+    <Content Include="Media\kkdpivlp\img-9.jpg" />
+    <Content Include="Media\oimdvsvx\img-11.jpg" />
+    <Content Include="Media\petdvxta\img-1.jpg" />
+    <Content Include="Media\sj1co4i1\img-7.jpg" />
+    <Content Include="Media\Web.config" />
+    <Content Include="scripts\custom-js.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -349,7 +360,6 @@
     <Content Include="config\imageprocessor\security.config" />
     <Content Include="config\imageprocessor\processing.config" />
     <Content Include="config\imageprocessor\cache.config" />
-    <Content Include="Media\Web.config" />
     <Content Include="config\umbracoSettings.config" />
     <Content Include="config\tinyMceConfig.config" />
     <Content Include="config\serilog.user.config" />
@@ -357,11 +367,24 @@
     <Content Include="config\HealthChecks.config" />
     <Content Include="config\ClientDependency.config" />
     <Content Include="config\BackOfficeTours\getting-started.json" />
+    <Content Include="Media\354h11cj\bg-1.webp" />
+    <Content Include="Media\ednockrx\bg-1.webp" />
+    <Content Include="Media\p5teoa1f\bg-1.webp" />
+    <Content Include="Media\ws2pzmy2\bg-1.webp" />
+    <Content Include="Media\ywcf2ylt\logo.webp" />
+    <Content Include="App_Plugins\.vs\App_Plugins\config\applicationhost.config" />
+    <Content Include="App_Plugins\.vs\ProjectSettings.json" />
+    <Content Include="App_Plugins\.vs\slnx.sqlite" />
+    <Content Include="App_Plugins\.vs\VSWorkspaceState.json" />
+    <Content Include="App_Plugins\Umbraco.TimePicker\package.manifest" />
+    <Content Include="App_Plugins\URLPicker\package.manifest" />
+    <Content Include=".gitignore" />
+    <Content Include=".gitattributes" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
-    <None Include="My Project\PublishProfiles\Emi-Center.pubxml" />
+    <None Include="My Project\PublishProfiles\FolderProfile.pubxml" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
@@ -377,12 +400,31 @@
     <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
-    <None Include="Web.Debug.config">
+    <Content Include="Views\cennik.cshtml" />
+    <Content Include="Views\galeria.cshtml" />
+    <Content Include="Views\master.cshtml" />
+    <Content Include="Views\StronaGlowna.cshtml" />
+    <None Include="Web.LIVE.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <None Include="Web.Release.config">
+    <None Include="Web.UAT.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Plugins\.vs\App_Plugins\v16\" />
+    <Folder Include="Media\5mshxuva\" />
+    <Folder Include="Media\crlghml0\" />
+    <Folder Include="Media\d4whxtrj\" />
+    <Folder Include="Media\esqjl0nl\" />
+    <Folder Include="Media\ioulty0s\" />
+    <Folder Include="Media\mk2ngrzf\" />
+    <Folder Include="Media\n20gzrve\" />
+    <Folder Include="Media\opmncpob\" />
+    <Folder Include="Media\q02ddeoa\" />
+    <Folder Include="Media\ww0pkvvw\" />
+    <Folder Include="Media\xaggvw2m\" />
+    <Folder Include="Views\MacroPartials\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -399,6 +441,12 @@
   </PropertyGroup>
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'LIVE|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'UAT|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
